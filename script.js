@@ -17,4 +17,3 @@ for (let i = 0; i < 16; i++) {
     gridCont.appendChild(gridRow);
 }
 
-console.log(gridElem);

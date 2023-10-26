@@ -15,6 +15,18 @@
     align-items: center;
 }
 
-h1, .boxcount {
+h1 {
     text-align: center;
+}
+
+.boxcount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    margin: auto;
+}
+
+input {
+    width: 40px;
 }
