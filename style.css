@@ -34,6 +34,14 @@ input {
     width: 40px;
 }
 
+#bottombuttons {
+    display: flex;
+}
+
+#resetbtn, #randomcolors {
+    margin: 10px 30px 10px 30px;
+}
+
 /* CSS */
 .button-10 {
   display: flex;
@@ -58,6 +66,3 @@ input {
   outline: 0;
 }
 
-#resetbtn {
-    margin-top: 10px;
-}
