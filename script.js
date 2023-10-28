@@ -2,20 +2,31 @@ const gridCont = document.querySelector('#grid-container');
 
 let numberOfBoxes = 16;
 
+const colorChanger = function(item) {
+    item.style.backgroundColor = 'black';
+    item.style.opacity="0.1";
+}
+
 let createGrid = function() { for (let i = 0; i < numberOfBoxes; i++) {
-    let gridRow = document.createElement('div');
+    const gridRow = document.createElement('div');
     gridRow.className = 'gridRow';
     for (let i = 0; i < numberOfBoxes; i++) {
-        let gridElem = document.createElement('div');
+        const gridElem = document.createElement('div');
         gridElem.style.border = '0.1px solid black';
         gridElem.style.width = 'auto';
         gridElem.style.height = 'auto';
         gridElem.style.flexGrow = '1';
+        gridElem.style.display = 'flex';
         gridRow.appendChild(gridElem);
-        gridElem.addEventListener('mouseover', function() {
-            this.style.backgroundColor = 'black';
-            this.style.opacity="0.1";
-        });
+        const gridInnerElem = document.createElement('div');
+        gridInnerElem.style.flexGrow = '1';
+        gridInnerElem.className = 'gridInnerElem';
+        gridElem.appendChild(gridInnerElem);
+        gridInnerElem.addEventListener('mouseover', () => colorChanger(gridInnerElem));
+        // ) {
+        //     // gridInnerElem.style.backgroundColor = 'black';
+        //     // gridInnerElem.style.opacity="0.1";
+        // });
     }
     gridRow.style.display = 'flex';
     gridRow.style.flexGrow = '1';
@@ -24,6 +35,7 @@ let createGrid = function() { for (let i = 0; i < numberOfBoxes; i++) {
 }
 
 createGrid();
+
 
 let btn = document.querySelector('#btn');
 btn.addEventListener('click', function() {
