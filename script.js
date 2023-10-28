@@ -2,8 +2,6 @@ const gridCont = document.querySelector('#grid-container');
 
 let numberOfBoxes = 16;
 
-
-
 let createGrid = function() { for (let i = 0; i < numberOfBoxes; i++) {
     let gridRow = document.createElement('div');
     gridRow.className = 'gridRow';
@@ -16,6 +14,7 @@ let createGrid = function() { for (let i = 0; i < numberOfBoxes; i++) {
         gridRow.appendChild(gridElem);
         gridElem.addEventListener('mouseover', function() {
             this.style.backgroundColor = 'black';
+            this.style.opacity="0.1";
         });
     }
     gridRow.style.display = 'flex';
@@ -32,7 +31,16 @@ btn.addEventListener('click', function() {
     numberOfBoxes = document.querySelector('#input').value;
     if (numberOfBoxes > 100) {
         numberOfBoxes = 100;
+    } else if (numberOfBoxes == '') {
+        numberOfBoxes = 16;
     }
     createGrid();
+    console.log(numberOfBoxes);
 });
 
+const resetbtn = document.querySelector('#resetbtn');
+
+resetbtn.addEventListener('click', function() {
+    gridCont.innerHTML = "";
+    createGrid();
+});
