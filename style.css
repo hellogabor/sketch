@@ -3,7 +3,20 @@
     padding: 0;
   } */
 
-  #container {
+@media only screen and (max-width: 768px) {
+    body {
+      overflow: hidden;
+      position: fixed;
+      width: 100%;
+    }
+    #grid-container {
+        width: 400px !important;
+        height: 400px !important;
+    }
+  }
+  
+
+#container {
     display: flex;
     justify-content: center;
     align-items: center;
